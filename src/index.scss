@@ -38,10 +38,21 @@ p {
     margin: 0;
   }
 }
+
 .search-block {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+
+  .clear {
+    position: absolute;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    top: 14px;
+    cursor: pointer;
+  }
 
   input {
     border: 0;
@@ -53,34 +64,7 @@ p {
 
 }
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
 
-.drawer {
-  position: absolute;
-  width: 420px;
-  right: 0;
-  height: 100%;
-  background: #FFFFFF;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  .items{
-    overflow: auto;
-  }
-
-  h2 {
-    margin: 0;
-    font-size: 24px;
-
-  }
-}
 
 .cartItem {
   border: 1px solid #F3f3f3;
@@ -137,8 +121,13 @@ p {
       margin: 0 7px;
     }
   }
+
   .greenButton {
     position: relative;
+
+    &:disabled{
+      animation: button-loading 1s ease-in-out infinite;
+    }
 
     img {
       position: absolute;
@@ -154,28 +143,75 @@ p {
     }
   }
 }
+
 .greenButton {
-    width: 100%;
-    height: 55px;
-    background: #9dd558;
-    border-radius: 18px;
-    border: inherit;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.2s ease-in-out;
+  width: 100%;
+  height: 55px;
+  background: #9dd558;
+  border-radius: 18px;
+  border: inherit;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  &:disabled{
+    background-color: #bebebe !important;
+    cursor: default;
+  }
 
-    &:hover {
-      background: lighten($color: #9dd558, $amount: 5%);
-    }
+  &:hover {
+    background: lighten($color: #9dd558, $amount: 5%);
+  }
 
-    &:active {
-      background: darken($color: #9dd558, $amount: 10%);
-    }
+  &:active {
+    background: darken($color: #9dd558, $amount: 10%);
+  }
 }
 
 
 .items {
   flex: 1;
+}
+
+.cartEmpty {
+  text-align: center;
+
+  p {
+    width: 280px;
+    line-height: 24px;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  .greenButton {
+    width: 245px;
+    margin-top: 40px;
+
+    img {
+      position: relative;
+      top: 1px;
+      margin-right: 15px;
+      transition: transform 0.15s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: translateX(-5px);
+      }
+    }
+  }
+}
+@keyframes button-loading {
+  0%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0.8;
+  }
+  100%{
+    opacity: 1;
+  }
 }

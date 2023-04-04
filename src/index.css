@@ -38,6 +38,15 @@ p {
   border: 1px solid #f3f3f3;
   border-radius: 10px;
   padding: 0 15px;
+  position: relative;
+}
+.search-block .clear {
+  position: absolute;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  top: 14px;
+  cursor: pointer;
 }
 .search-block input {
   border: 0;
@@ -45,33 +54,6 @@ p {
   font-size: 16px;
   opacity: 0.5;
   width: 200px;
-}
-
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.drawer {
-  position: absolute;
-  width: 420px;
-  right: 0;
-  height: 100%;
-  background: #FFFFFF;
-  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-}
-.drawer .items {
-  overflow: auto;
-}
-.drawer h2 {
-  margin: 0;
-  font-size: 24px;
 }
 
 .cartItem {
@@ -125,6 +107,9 @@ p {
 .cartTotalBlock .greenButton {
   position: relative;
 }
+.cartTotalBlock .greenButton:disabled {
+  animation: button-loading 1s ease-in-out infinite;
+}
 .cartTotalBlock .greenButton img {
   position: absolute;
   right: 30px;
@@ -147,6 +132,10 @@ p {
   cursor: pointer;
   transition: background 0.2s ease-in-out;
 }
+.greenButton:disabled {
+  background-color: #bebebe !important;
+  cursor: default;
+}
 .greenButton:hover {
   background: #a9da6c;
 }
@@ -156,6 +145,42 @@ p {
 
 .items {
   flex: 1;
+}
+
+.cartEmpty {
+  text-align: center;
+}
+.cartEmpty p {
+  width: 280px;
+  line-height: 24px;
+}
+.cartEmpty h2 {
+  margin-bottom: 15px;
+}
+.cartEmpty .greenButton {
+  width: 245px;
+  margin-top: 40px;
+}
+.cartEmpty .greenButton img {
+  position: relative;
+  top: 1px;
+  margin-right: 15px;
+  transition: transform 0.15s ease-in-out;
+}
+.cartEmpty .greenButton:hover img {
+  transform: translateX(-5px);
+}
+
+@keyframes button-loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
