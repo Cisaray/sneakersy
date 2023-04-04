@@ -96,9 +96,9 @@ const App = () => {
                 <Drawer onRemove={onRemoveItem} opened={cartOpened}/>
                 <Header/>
                 <Routes>
-                    <Route path='/favorites' exact
+                    <Route path='favorites' exact
                            element={<Favorites/>}/>
-                    <Route path='/orders' exact
+                    <Route path='orders' exact
                            element={<Orders setIsLoading={setIsLoading}/>}/>
                     <Route path='/' exact element={
                         <Home

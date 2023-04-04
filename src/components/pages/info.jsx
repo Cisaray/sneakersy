@@ -9,7 +9,7 @@ const Info = ({title, description, image}) => {
             <img width={120} height={120} src={image} alt="emptyCart" className="mb-20"/>
             <h2>{title}</h2>
             <div className="opacity-6">{description}</div>
-            <Link to='/'>
+            <Link to=''>
                 <button onClick={() => setCartOpened(false)} className="greenButton">
                     <img src="img/arrowBack.svg" alt="Arrow"/>
                     Вернуться назад
