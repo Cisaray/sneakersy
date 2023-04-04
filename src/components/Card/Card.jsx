@@ -39,7 +39,7 @@ const Card = ({
                 </ContentLoader> :
                 <>
                 {onFavorite && <div className={styles.favourite} onClick={onClickLike}>
-                        <img src={isLiked ? "/img/heartLiked.svg" : "/img/heartUnliked.svg"} alt="heartUnliked"/>
+                        <img src={isLiked ? "img/heartLiked.svg" : "img/heartUnliked.svg"} alt="heartUnliked"/>
                     </div>}
                     <img width={133} height={112} src={imageUrl} alt="kross1"/>
                     <h5>{title}</h5>
@@ -49,7 +49,7 @@ const Card = ({
                             <b>{price} руб.</b>
                         </div>
                         {onPlus && <button className={styles.button} onClick={onClickPlus}>
-                            <img width={32} height={32} src={isItemAdded(id)  ? "/img/plusConfirmed.svg" : "/img/plus.svg"}
+                            <img width={32} height={32} src={isItemAdded(id)  ? "img/plusConfirmed.svg" : "img/plus.svg"}
                                  alt="plus"/>
                         </button>}
                     </div>

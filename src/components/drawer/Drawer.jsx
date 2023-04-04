@@ -35,7 +35,7 @@ const Drawer = ({onRemove, opened}) => {
     return (<div className={`${styles.overlay} ${opened? styles.overlayVisible :''}`}>
             <div className={styles.drawer}>
                 <h2 className="d-flex justify-between mb-30">Корзина
-                    <img onClick={() => setCartOpened(false)} className="removeBtn cu-p" src="/img/btn-remove.svg"
+                    <img onClick={() => setCartOpened(false)} className="removeBtn cu-p" src="img/btn-remove.svg"
                          alt="Close"/>
                 </h2>
                 {cartItems.length > 0 ? (<div className='d-flex flex-column flex'>
@@ -48,7 +48,7 @@ const Drawer = ({onRemove, opened}) => {
                                 <b>{obj.price} руб.</b>
                             </div>
                             <img onClick={() => onRemove(obj.id)} className="removeBtn"
-                                 src="/img/btn-remove.svg" alt="remove"/>
+                                 src="img/btn-remove.svg" alt="remove"/>
                         </div>))}
                     </div>
                     <div className="cartTotalBlock">
@@ -64,10 +64,10 @@ const Drawer = ({onRemove, opened}) => {
                                 <b>{(Math.floor((totalPrice*0.05)*100))/100} руб.</b>
                             </li>
                         </ul>
-                        <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Оформить заказ<img src="/img/arrow.svg" alt="arrow"/>
+                        <button disabled={isLoading} onClick={onClickOrder} className="greenButton">Оформить заказ<img src="img/arrow.svg" alt="arrow"/>
                         </button>
                     </div>
-                </div>) : (<Info image={isOrderComplete?'/img/orderConfirmed.jpg':'/img/emptyCart.jpg'}
+                </div>) : (<Info image={isOrderComplete?'img/orderConfirmed.jpg':'img/emptyCart.jpg'}
                                  title={isOrderComplete?'Заказ оформлен!':'Корзина пустая'}
                                  description={isOrderComplete?`Ваш заказ #${orderId} скоро будет передан курьерской доставке`:
                                      'Добавьте хотя бы одну пару кроссовок, чтобы сделать заказ.'}/>)

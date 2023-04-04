@@ -36,7 +36,7 @@ const Orders = () => {
                         {...item}/>
                 )}
             </div>:<Info
-                image='/img/sadSmile.jpg'
+                image='img/sadSmile.jpg'
                 title='У вас нет заказов :('
                 description='Вы нищеброд?  Оформите хотя бы один заказ.'/>}
         </div>

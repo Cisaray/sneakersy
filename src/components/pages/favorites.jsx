@@ -19,7 +19,7 @@ const Favorites = () => {
                         onFavorite={onAddToFavorite}
                         {...item}
                     />)}
-            </div>):<Info image='/img/cryingSmile.jpg'
+            </div>):<Info image='img/cryingSmile.jpg'
                           title='Закладок нет :('
                           description='Вы ничего не добавляли в закладки'/>}
         </div>
