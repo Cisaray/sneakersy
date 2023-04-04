@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sneakersy/static/css/main.0f543cd1.css",
+    "main.js": "/sneakersy/static/js/main.37e1ceee.js",
+    "index.html": "/sneakersy/index.html",
+    "main.0f543cd1.css.map": "/sneakersy/static/css/main.0f543cd1.css.map",
+    "main.37e1ceee.js.map": "/sneakersy/static/js/main.37e1ceee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f543cd1.css",
+    "static/js/main.37e1ceee.js"
+  ]
+}
